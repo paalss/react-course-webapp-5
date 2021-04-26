@@ -8,7 +8,7 @@ Lag en Food Order App som:
 - gjør det mulig å redigere handlekurv (legge til og fjerne antall meals)
 
 ![ferdig_app](public/screenshots/ferdig-app-vist-i-video.png)
-Ferdig app vist som i video
+Ferdig app som vist i video
 
 Dette prosjektet går gjennom tema som vi har gått gjennom tidligere, og kombinerer det sammen i et større prosjekt.
 
