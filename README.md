@@ -8,10 +8,11 @@ Lag en Food Order App som:
 - gjør det mulig å redigere handlekurv (legge til og fjerne antall meals)
 
 ![ferdig_app](public/screenshots/ferdig-app-vist-i-video.png)
-Ferdig app
+Ferdig app vist som i video
 
 Dette prosjektet går gjennom tema som vi har gått gjennom tidligere, og kombinerer det sammen i et større prosjekt.
 
+## Min progresjon
 Har blitt tildelt en del CSS- og noen JS-filer. Unvervisningsvideoen foreslo at jeg kunne prøve å kode så mye av løsningen som mulig, uten å se på "fasit-videoene".\
 Jeg gjorde nettopp det. Har for det meste opprettet JS-filer med komponenter basert på CSS-filene og bygget på GUI-et.
 
