@@ -1,7 +1,7 @@
 import classes from "./MealItemForm.module.css";
 import Card from "../../UI/Card"
 import MealItem from "../MealItem";
-import Input from "./Input";
+import Input from "../../UI/Input";
 
 const MealItemForm = () => {
   return (
