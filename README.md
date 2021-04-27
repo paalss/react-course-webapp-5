@@ -14,7 +14,13 @@ Dette prosjektet går gjennom tema som vi har gått gjennom tidligere, og kombin
 
 ## Min progresjon
 
-### 2
+### 3 (commit)
+![min_app](public/screenshots/app-2021-04-27-124018.png)
+Legger til Cart Modal (komponent som bruker UI komponent modal). Header knapp (HeaderCartButton) får tilsendt en funksjon (showCartHandler) som lar App rendre Cart. Cart får selv tilsendt funksjon (hideCartHandler) for å ikke rendres av App.
+
+"Legger til Cart Modal. Se mer i README punkt 3"
+
+### 2 ([commit](https://github.com/paalss/react-course-webapp-5/tree/aca95b197641b1dc6430c60cbdb96a0d4706e7d1))
 ![min_app](public/screenshots/app-2021-04-27-095132.png)
 
 "Brukergrensesnitt etter å ha fulgt videoer. Litt omstrukturering: ting legges i andre mappestrukturer. UI/Input.js gjøres mer configable med props (det gir jo mening)."
