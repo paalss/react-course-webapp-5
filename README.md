@@ -19,6 +19,8 @@ Dette prosjektet går gjennom tema som vi har gått gjennom tidligere, og kombin
 
 "Brukergrensesnitt etter å ha fulgt videoer. Litt omstrukturering: ting legges i andre mappestrukturer. UI/Input.js gjøres mer configable med props (det gir jo mening)."
 
+"måtte følge video for å få til header-bildet. Bruker import for å hente inn lokalt bilde. De fleste GUI elementene er på plass."
+
 ### 1 ([commit](https://github.com/paalss/react-course-webapp-5/tree/26b44890201c2c7971bb368cc9715a241bb139b5))
 ![min_app](public/screenshots/app-2021-04-26-140530.png)
 
