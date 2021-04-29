@@ -3,9 +3,9 @@
 ## Oppgaven
 Lag en Food Order App som:
 - lister opp meals
-- viser frem handlekurv
-- gjør det mulig å legge meals til handlekurv
-- gjør det mulig å redigere handlekurv (legge til og fjerne antall meals)
+- viser frem cart
+- gjør det mulig å legge meals til cart
+- gjør det mulig å redigere cart (legge til og fjerne antall meals)
 
 ![ferdig_app](public/screenshots/ferdig-app-vist-i-video.png)
 Ferdig app som vist i video
@@ -14,7 +14,12 @@ Dette prosjektet går gjennom tema som vi har gått gjennom tidligere, og kombin
 
 ## Min progresjon
 
-### 3 (commit)
+### 4 ([commit]())
+![min_app](public/screenshots/app-2021-04-29-141551.png)
+
+Man kan legge til meals i cart, se lagt til meals og endre antallet. "Order" button vises kun om det ligger noen meals i cart. Total pris endres også.
+
+### 3 ([commit](https://github.com/paalss/react-course-webapp-5/tree/e55300553d7047c51c6915ff9e4b6fe0babeb60e))
 ![min_app](public/screenshots/app-2021-04-27-124018.png)
 Legger til Cart Modal (komponent som bruker UI komponent modal). Header knapp (HeaderCartButton) får tilsendt en funksjon (showCartHandler) som lar App rendre Cart. Cart får selv tilsendt funksjon (hideCartHandler) for å ikke rendres av App.
 
