@@ -1,30 +1,28 @@
-// import Card from "./Card";
-// import Button from "./Button";
 import { Fragment } from "react";
 import classes from "./Modal.module.css";
-import {createPortal} from "react-dom";
+import { createPortal } from "react-dom";
 
-const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onClick} />;
+const Backdrop = ({ onClick }) => {
+  return <div className={classes.backdrop} onClick={onClick} />;
 };
 
-const ModalOverlay = (props) => {
+const ModalOverlay = ({ children }) => {
   return (
     <div className={classes.modal}>
-      <div className={classes.content}>{props.children}</div>
+      <div className={classes.content}>{children}</div>
     </div>
   );
 };
 
-const Modal = (props) => {
+const Modal = ({ onClick, children }) => {
   return (
     <Fragment>
       {createPortal(
-        <Backdrop onClick={props.onClick} />,
+        <Backdrop onClick={onClick} />,
         document.getElementById("overlays")
       )}
       {createPortal(
-        <ModalOverlay>{props.children}</ModalOverlay>,
+        <ModalOverlay>{children}</ModalOverlay>,
         document.getElementById("overlays")
       )}
     </Fragment>

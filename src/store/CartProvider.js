@@ -48,9 +48,7 @@ const cartReducer = (state, action) => {
       updatedItems = [...state.items];
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
-      updatedItems = state.items.filter(item=> item.id !== action.id)
-      // updatedItems = [...state.items];
-      // updatedItems.splice(existingCartItemIndex, 1);
+      updatedItems = state.items.filter((item) => item.id !== action.id);
     }
     return {
       items: updatedItems,
@@ -61,7 +59,7 @@ const cartReducer = (state, action) => {
   return defaultCartState;
 };
 
-const CartProvider = (props) => {
+const CartProvider = ({ children }) => {
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
     defaultCartState
@@ -81,9 +79,7 @@ const CartProvider = (props) => {
     removeItem: removeItemFromCartHandler,
   };
   return (
-    <CartContext.Provider value={cartContext}>
-      {props.children}
-    </CartContext.Provider>
+    <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
   );
 };
 

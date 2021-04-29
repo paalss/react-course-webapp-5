@@ -3,7 +3,7 @@ import CartIcon from "../../Cart/CartIcon";
 import classes from "./HeaderCartButton.module.css";
 import CartContext from "../../../store/cart-context";
 
-const HeaderCartButton = (props) => {
+const HeaderCartButton = ({ onClick }) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
   const cartCtx = useContext(CartContext);
 
@@ -32,7 +32,7 @@ const HeaderCartButton = (props) => {
   }, [items]);
 
   return (
-    <button onClick={props.onClick} className={btnClasses}>
+    <button onClick={onClick} className={btnClasses}>
       <span className={classes.icon}>
         <CartIcon />
       </span>

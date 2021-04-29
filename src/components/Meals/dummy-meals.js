@@ -25,4 +25,4 @@ const DUMMY_MEALS = [
   },
 ];
 
-export default DUMMY_MEALS
+export default DUMMY_MEALS;
