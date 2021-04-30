@@ -1,5 +1,5 @@
 # react-course-webapp-5
-Section 11: Practice Project: Building a Food Order App
+*Section 11: Practice Project: Building a Food Order App*
 
 **Lag en food order app som:**
 - lister opp meals
