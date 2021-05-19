@@ -6,9 +6,9 @@
 
 **Oppdater food order app**
 - Lag Basic Chekcout form / order form
- - Etter å ha klikket på 'order button' så kan man fylle inn navn og adresse.
+ - :heavy_check_mark: Etter å ha klikket på 'order button' så kan man fylle inn navn og adresse.
  - Valider user input på klient
- - Dette skal submittes til backend (firebase)
+ - :heavy_check_mark: Dette skal submittes til backend (firebase)
 
 - Flytt meals data
  - Meals data er hardkodet i kildekoden
