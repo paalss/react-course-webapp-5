@@ -43,7 +43,7 @@ const Cart = ({ onHideCart }) => {
     });
   };
 
-  async function addCheckoutHandler(checkout) {
+  const addCheckoutHandler = async (checkout) => {
     const response = await fetch(
       "https://react-http-f8322-default-rtdb.europe-west1.firebasedatabase.app/checkout.json",
       {
