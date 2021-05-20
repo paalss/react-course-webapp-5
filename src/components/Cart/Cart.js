@@ -51,22 +51,51 @@ const Cart = ({ onHideCart }) => {
         body: JSON.stringify(checkout),
         headers: {
           "Content-Type": "application/json",
-        }
+        },
       }
     );
-    const data = await response.json()
-    console.log('data:', data);
-  }
+    const data = await response.json();
+    console.log("data:", data);
+  };
 
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredNameIsTouched, setEnteredNameIsTouched] = useState(false);
 
-  const submitHandler=(event)=>{
-    event.preventDefault()
+  const [enteredAddress, setEnteredAddress] = useState("");
+  const [enteredAddressIsTouched, setEnteredAddressIsTouched] = useState(false);
+
+  const enteredNameIsValid = enteredName.trim() !== "";
+  const enteredAddressIsValid = enteredAddress.trim() !== "";
+
+  const nameHasError = !enteredNameIsValid && enteredNameIsTouched;
+  const addressHasError = !enteredAddressIsValid && enteredAddressIsTouched;
+
+  const formIsValid = enteredNameIsValid && enteredAddressIsValid;
+
+  const nameInputChangeHandler = (event) => {
+    setEnteredName(event.target.value);
+  };
+
+  const addressInputChangeHandler = (event) => {
+    setEnteredAddress(event.target.value);
+  };
+
+  const nameInputBlurHandler = () => {
+    setEnteredNameIsTouched(true);
+  };
+
+  const addressInputBlurHandler = () => {
+    setEnteredAddressIsTouched(true);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
     const checkout = {
       name: nameRef.current.value,
       address: addressRef.current.value,
-    }
+    };
     addCheckoutHandler(checkout);
-  }
+  };
 
   return (
     <Modal title="Cart" onClick={onHideCart}>
@@ -95,18 +124,26 @@ const Cart = ({ onHideCart }) => {
               input={{
                 id: "name",
                 type: "text",
+                value: enteredName,
+                onChange: nameInputChangeHandler,
+                onBlur: nameInputBlurHandler,
               }}
             />
+            {nameHasError && <p className="error-text">Name cannot be empty</p>}
             <Input
               label="Address"
               ref={addressRef}
               input={{
                 id: "address",
                 type: "text",
+                value: enteredAddress,
+                onChange: addressInputChangeHandler,
+                onBlur: addressInputBlurHandler,
               }}
             />
+            {addressHasError && <p className="error-text">Address cannot be empty</p>}
             <div className={classes.actions}>
-              <button className={classes.button}>Order</button>
+              <button className={classes.button} disabled={!formIsValid}>Order</button>
             </div>
           </form>
         </div>
