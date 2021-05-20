@@ -10,7 +10,7 @@
   - Valider user input på klient
   - Dette skal submittes til backend (firebase)
 
-- Flytt meals data
+- :heavy_check_mark: Flytt meals data
   - Meals data er hardkodet i kildekoden
   - Flytt til backend
   - Importer meals fra backend
