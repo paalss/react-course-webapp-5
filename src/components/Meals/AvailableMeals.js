@@ -5,15 +5,22 @@ import { useCallback, useEffect, useState } from "react";
 
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
-  console.log("meals", meals);
+  const [isLoading, setIsLoading] = useState(false);
+  const [httpError, setHttpError] = useState(null);
 
-  const fetchMealsHandler = useCallback(async () => {
+  const fetchMeals = useCallback(async () => {
+    setIsLoading(true);
     const response = await fetch(
       "https://react-http-f8322-default-rtdb.europe-west1.firebasedatabase.app/meals.json"
     );
-    const data = await response.json();
-    const loadedMeals = [];
 
+    if (!response.ok) {
+      throw new Error("Something went wrong!");
+    }
+
+    const data = await response.json();
+
+    const loadedMeals = [];
     for (const key in data) {
       loadedMeals.push({
         id: key,
@@ -24,14 +31,33 @@ const AvailableMeals = () => {
     }
 
     setMeals(loadedMeals);
-    return data;
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
-    fetchMealsHandler();
-  }, [fetchMealsHandler]);
+    fetchMeals().catch(error=>{
+      setIsLoading(false);
+      setHttpError(error.message);
+    })
+  }, [fetchMeals]);
 
-  let content = <p>No meals available</p>
+  if (isLoading) {
+    return (
+      <section className={classes.MealsLoading}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
+if (httpError) {
+  return (
+    <section className={classes.MealsError}>
+      <p>{httpError}</p>
+    </section>
+  );
+}
+
+  let content = <p>No meals available</p>;
   if (meals.length > 0) {
     content = meals.map((meal) => {
       return (

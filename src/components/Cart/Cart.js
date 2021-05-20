@@ -54,8 +54,8 @@ const Cart = ({ onHideCart }) => {
         },
       }
     );
-    const data = await response.json();
-    console.log("data:", data);
+    // const data = await response.json();
+    // console.log("data:", data);
   };
 
   const [enteredName, setEnteredName] = useState("");

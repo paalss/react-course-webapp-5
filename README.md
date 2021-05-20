@@ -1,5 +1,5 @@
 # react-course-webapp-5
-*Brukt i section 11 og 17*
+*Section 11 og 17*
 
 ## Section 17
 *Practice Project: Adding Http & Forms To The Food Order App*
@@ -15,6 +15,10 @@
   - Flytt til backend
   - Importer meals fra backend
 
+**Se min løsning**
+```
+git checkout 15fabf0
+```
 Se siste arbeid: `git checkout section17`
 
 ## Section 11
