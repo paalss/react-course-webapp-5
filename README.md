@@ -15,7 +15,10 @@
   - Flytt til backend
   - Importer meals fra backend
 
-Se siste arbeid: `git checkout section17`
+**Se min løsning**
+```
+git checkout 15fabf0
+```
 
 ## Section 11
 *Practice Project: Building a Food Order App*
