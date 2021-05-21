@@ -55,6 +55,9 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+  if (action.type === "CLEAR") {
+    return defaultCartState;
+  }
 
   return defaultCartState;
 };
@@ -72,13 +75,21 @@ const CartProvider = ({ children }) => {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
 
-  const cartContext = useMemo(()=>({
-    items: cartState.items,
-    totalAmount: cartState.totalAmount,
-    addItem: addItemToCartHandler,
-    removeItem: removeItemFromCartHandler,
-  }), [cartState.items, cartState.totalAmount])
-  
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: "CLEAR" });
+  };
+
+  const cartContext = useMemo(
+    () => ({
+      items: cartState.items,
+      totalAmount: cartState.totalAmount,
+      addItem: addItemToCartHandler,
+      removeItem: removeItemFromCartHandler,
+      clearCart: clearCartHandler
+    }),
+    [cartState.items, cartState.totalAmount]
+  );
+
   return (
     <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
   );

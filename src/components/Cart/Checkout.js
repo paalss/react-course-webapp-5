@@ -56,9 +56,11 @@ const Checkout = ({ onConfirm, onCancel }) => {
   const nameControlClasses = `${classes.control} ${
     nameHasError && classes.invalid
   }`;
+  
   const addressControlClasses = `${classes.control} ${
     addressHasError && classes.invalid
   }`;
+
   return (
     <Fragment>
       <h2>Checkout</h2>
