@@ -4,7 +4,7 @@
 ## Section 17
 *Practice Project: Adding Http & Forms To The Food Order App*
 
-**Oppdater food order app**
+**Oppg: Oppdater food order app**
 - Lag Basic Chekcout form / order form
   - Etter å ha klikket på 'order button' så kan man fylle inn navn og adresse.
   - Valider user input på klient
@@ -24,7 +24,7 @@ På dette tidspunktet ^^ hadde jeg fått til alt unntatt det å submitte cart it
 ## Section 11
 *Practice Project: Building a Food Order App*
 
-**Lag en food order app som:**
+**Oppg: Lag en food order app som:**
 - lister opp meals
 - kan legge meals til cart
 - viser cart med meals
