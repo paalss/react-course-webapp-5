@@ -2,7 +2,7 @@ import classes from "./Checkout.module.css";
 import Input from "./../UI/Input";
 import { Fragment, useRef, useState } from "react";
 
-const Checkout = ({ onCancel }) => {
+const Checkout = ({ onConfirm, onCancel }) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameIsTouched, setEnteredNameIsTouched] = useState(false);
 
@@ -50,20 +50,7 @@ const Checkout = ({ onCancel }) => {
       name: nameRef.current.value,
       address: addressRef.current.value,
     };
-    addCheckoutHandler(checkout);
-  };
-
-  const addCheckoutHandler = async (checkout) => {
-    fetch(
-      "https://react-http-f8322-default-rtdb.europe-west1.firebasedatabase.app/checkout.json",
-      {
-        method: "POST",
-        body: JSON.stringify(checkout),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    onConfirm(checkout)
   };
 
   const nameControlClasses = `${classes.control} ${

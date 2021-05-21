@@ -15,8 +15,25 @@ const Cart = ({ onHideCart }) => {
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
+
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, amount: 1 });
+  };
+
+  const submitOrderHandler = (userData) => {
+    fetch(
+      "https://react-http-f8322-default-rtdb.europe-west1.firebasedatabase.app/checkout.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: userData,
+          ordererdItems: cartCtx.items
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   const cartItems = (
@@ -59,7 +76,9 @@ const Cart = ({ onHideCart }) => {
         <span>{totalAmount}</span>
       </div>
       {!isCheckout && buttonActions}
-      {isCheckout && <Checkout onCancel={onHideCart} />}
+      {isCheckout && (
+        <Checkout onConfirm={submitOrderHandler} onCancel={onHideCart} />
+      )}
     </Modal>
   );
 };
